@@ -12,9 +12,13 @@
 <% end %>
 
 <div class="field">
-  <%= form.label :book_id %>
-  <%= form.text_field :book_id %>
+  <%= form.hidden_field :book_id %>
 </div>
+
+<p>
+  <%= review.book.title %>
+    のレビュー
+</p>
 
 <div class="field">
   <%= form.label :title %>
