@@ -24,7 +24,7 @@
   <%= form_with(model: DoneItem.new, local: true) do |form| %>
     <%= form.hidden_field :book_id, :value => @book.id %>
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit '読んだ' %>
     </div>
   <% end %>
 <% end %>
