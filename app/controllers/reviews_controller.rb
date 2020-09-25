@@ -13,11 +13,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    if params['book_id']
-      @review = Review.new(book_id: params['book_id'])
-    else
-      @review = Review.new
-    end
+    @review = Review.new(book_id: params['book_id'])
   end
 
   # GET /reviews/1/edit
