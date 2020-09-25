@@ -20,5 +20,7 @@
   <%= @review.body %>
 </p>
 
+<% if is_current_user?(@review.user) %>
 <%= link_to 'Edit', edit_review_path(@review) %> |
+<% end %>
 <%= link_to 'Back', reviews_path %>

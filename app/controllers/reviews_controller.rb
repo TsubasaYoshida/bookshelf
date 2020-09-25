@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: %i[show edit update destroy]
+  before_action :check_reviewer, only: %i[edit update destroy]
 
   # GET /reviews
   # GET /reviews.json
@@ -69,5 +70,9 @@ class ReviewsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def review_params
     params.require(:review).permit(:book_id, :title, :body)
+  end
+
+  def check_reviewer
+    redirect_to root_path if current_user != @review.user
   end
 end
